@@ -10,7 +10,7 @@ CREATE TABLE burgers
 (
     -- each burger created will have an id, a name, and a boolean column for whether or not they have been 'devoured'
     id INT AUTO_INCREMENT NOT NULL,
-    burger_names VARCHAR(255) NOT NULL,
+    burger_name VARCHAR(255) NOT NULL,
     devoured BOOLEAN DEFAULT false, 
     
     PRIMARY KEY (id)

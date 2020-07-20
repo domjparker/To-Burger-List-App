@@ -5,6 +5,8 @@ const express = require("express")
 // use the port initiated by Heroku, or port 3000
 const PORT = process.env.PORT || 3000;
 
+const app = express();
+
 // serve static assets(files) from the public directory
 app.use(express.static("public"));
 
@@ -17,7 +19,8 @@ app.use(express.json());
 const exphbs = require("express-handlebars");
 
 // configure handlebars as the view engine
-app.engine("handlebars", exphbs({ defaultLayout: main}));
+app.engine("handlebars", exphbs({ defaultLayout: "main"}));
+app.set("view engine", "handlebars");
 
 // import routes from burgersController.js and give server access
 const routes = require("./controllers/burgersController.js");
