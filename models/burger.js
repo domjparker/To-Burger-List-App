@@ -2,10 +2,13 @@
 const orm = require("../config/orm.js");
 
 var burger = {
-    all: function(callback) {
+    all: function(controllerCallbackFunction) {
         orm.all("burgers", function(res) {
-            callback(res);
+            controllerCallbackFunction(res);
         });
     },
     
 }
+
+// export database functions for the controller (burgersController.js).
+module.exports = burger;

@@ -39,5 +39,18 @@ function objToSql(ob) {
 const orm = {
     all: function(tableInput, burgerCallBackFunction) {
         let queryString = "SELECT * FROM " + tableInput + ";";
+        connection.query(queryString, function(err, result) {
+            if (err) {
+                throw err;
+            }
+            burgerCallBackFunction(result);
+        });
     }
-}
+
+
+
+};
+
+
+// export the orm object for the model (burger.js)
+module.exports = orm;
