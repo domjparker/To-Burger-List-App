@@ -7,6 +7,11 @@ var burger = {
             controllerCallbackFunction(res);
         });
     },
+    create: function(cols, vals, controllerCB) {
+        orm.create("burgers", cols, vals, function(res) {
+            controllerCB(res);
+        });
+    },
     
 }
 
