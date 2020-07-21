@@ -7,18 +7,24 @@
 <h2>Burgers I want plan to eat!</h2>
 <ul>
     {{#each burgers}}
-        {{#unless devoured}}
-            {{> burgers/burger-block devoured=false}}
-        {{/unless}}
+    {{#unless devoured}}
+    <li>
+        <div>{{burger_name}}</div>
+        <button class="devourBurger" data-id="{{id}}">DEVOUR BURGER
+        </button>
+    </li>
+    {{/unless}}
     {{/each}}
 </ul>
 
 <h2>Burgers I have eaten!</h2>
 <ul>
     {{#each burgers}}
-        {{#if devoured}}
-            {{burgers/burger-block devoured=true}}
-        {{/if}}
+    {{#if devoured}}
+    <li>
+        {{burger_name}}
+    </li>
+    {{/if}}
     {{/each}}
 </ul>
 
@@ -26,11 +32,11 @@
 
 <form class="create-form">
 
-  <div class="form-group">
-    <input type="text" id="newBurgerName" name="burger_name">
-    <label for="newBurgerName">Enter a burger you'd like to devour and click "submit burger" to add it to the list.</label>
-  </div>
+    <div class="form-group">
+        <input type="text" id="newBurgerName" name="burger_name">
+        <label for="burger_name">Enter a burger you'd like to devour and click "submit burger" to add it to the
+            list.</label>
+    </div>
 
-  <button type="submit">Submit burger</button>
+    <button type="submit">Submit burger</button>
 </form>
-

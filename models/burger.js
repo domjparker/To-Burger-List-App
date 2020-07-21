@@ -1,19 +1,23 @@
 // import ORM to create functions that will interact with the database
 const orm = require("../config/orm.js");
 
-var burger = {
-    all: function(controllerCallbackFunction) {
-        orm.all("burgers", function(res) {
-            controllerCallbackFunction(res);
+const burger = {
+    all: function (controllerAllCB) {
+        orm.all("burgers", function (res) {
+            controllerAllCB(res);
         });
     },
-    create: function(cols, vals, controllerCB) {
-        orm.create("burgers", cols, vals, function(res) {
-            controllerCB(res);
+    create: function (burgerObject, controllerCreateCB) {
+        orm.create("burgers", burgerObject, function (res) {
+            controllerCreateCB(res);
         });
     },
-    
-}
+    update: function (objectUpdating, burgerId, controllerUpdateCB) {
+        orm.update("burgers", objectUpdating, burgerId, function (res) {
+            controllerUpdateCB(res);
+        });
+    }
+};
 
 // export database functions for the controller (burgersController.js).
 module.exports = burger;
