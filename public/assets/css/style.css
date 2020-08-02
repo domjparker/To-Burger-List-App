@@ -1,0 +1,42 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background: url(../images/close-up-photo-of-burger-1639562.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.collection {
+  border: none !important;
+  opacity: 0.8;
+  border: none !important;
+}
+
+.collection-header {
+  background-color: black !important;
+  color: white;
+  border: none !important;
+}
+
+.collection-item {
+  display: flex;
+  justify-content: space-between;
+  background-color: black !important;
+  color: white;
+  border: none !important;
+}
+
+.card {
+  opacity: 0.8;
+}
+
+.page-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,13 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-		<link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
-		<title>To-Burger List App!</title>
-		<script src="https://code.jquery.com/jquery.js"></script>
-		<script src="/assets/js/burgers.js"></script>
-	</head>
-	<body>
-		{{{ body }}}
-	</body>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
+    <title>To-Burger List App!</title>
+    <!-- Compiled and minified CSS -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="row">
+            <div class="col l1"></div>
+            <div class="col s12 m6 l5">
+                <h2 class="red-text">To-Burger List App</h2>
+                <h5 class="yellow-text">A To-Do Planner for Eating Burgers</h5>
+            </div>
+            <div class="col m6 l6"></div>
+        </div>
+    </div>
+
+    {{!-- <div class="container"> --}}
+    <div class="section">
+        {{{ body }}}
+    </div>
+    {{!-- </div> --}}
+
+    <footer class="page-footer red">
+        <div class="footer-copyright transparent">
+            © 2020 domjparker
+        </div>
+    </footer>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="/assets/js/burgers.js"></script>
+</body>
+
 </html>

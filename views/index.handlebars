@@ -1,42 +1,55 @@
-<div>
-    <img src="./assets/images/burger_img.jpg" alt="burger image">
-</div>
+<div class="row">
+    <div class="col l1"></div>
 
-<h1>To-Burger List App</h1>
+    <div class="col s12 m5 l4">
+        {{!-- Burgers to Devour --}}
+        <ul class="collection with-header">
+            <li class="collection-header">
+                <h4>Burgers I plan on devouring!</h4>
+            </li>
+            {{#each burgers}}
+            {{#unless devoured}}
+            <li class="collection-item">
+                <div>{{burger_name}}</div>
+                <div><button class="devourBurger right-align waves-effect waves-light btn yellow black-text"
+                        data-id="{{id}}"><i class="material-icons right black-text">restaurant</i>DEVOUR
+                    </button></div>
+            </li>
+            {{/unless}}
+            {{/each}}
+        </ul>
+    
+        {{!-- Burgers devoured --}}
+        <ul class="collection with-header">
+            <li class="collection-header">
+                <h4>Burgers I have eaten!</h4>
+            </li>
+            {{#each burgers}}
+            {{#if devoured}}
+            <li class="collection-item">
+                {{burger_name}}
+            </li>
+            {{/if}}
+            {{/each}}
+        </ul>
 
-<h2>Burgers I want plan to eat!</h2>
-<ul>
-    {{#each burgers}}
-    {{#unless devoured}}
-    <li>
-        <div>{{burger_name}}</div>
-        <button class="devourBurger" data-id="{{id}}">DEVOUR BURGER
-        </button>
-    </li>
-    {{/unless}}
-    {{/each}}
-</ul>
-
-<h2>Burgers I have eaten!</h2>
-<ul>
-    {{#each burgers}}
-    {{#if devoured}}
-    <li>
-        {{burger_name}}
-    </li>
-    {{/if}}
-    {{/each}}
-</ul>
-
-<h2>Add a burger to the list</h2>
-
-<form class="create-form">
-
-    <div class="form-group">
-        <input type="text" id="newBurgerName" name="burger_name">
-        <label for="burger_name">Enter a burger you'd like to devour and click "submit burger" to add it to the
-            list.</label>
+        {{!-- Add burger to list --}}
+        <div class="card black">
+            <div class="card-content white-text">
+                <span class="card-title">Add a burger to the list</span>
+                <form class="create-form">
+                    <div class="input-field col s12">
+                        <input id="newBurgerName" type="text" name="burger_name">
+                        <label for="burger_name">Enter burger and click "submit".</label>
+                    </div>
+                    <div class="right-align">
+                        <button type="submit" class="waves-effect waves-light btn yellow black-text">Submit
+                            burger</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 
-    <button type="submit">Submit burger</button>
-</form>
+    <div class="col m7 l7"></div>
+</div>
