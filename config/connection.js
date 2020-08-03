@@ -3,7 +3,7 @@ const mysql = require("mysql");
 var connection;
 // create connection with burger_db database
 if (process.env.JAWSDB.URL) {
-    connection = mysql.createConnection(process.env.JAWSDB.URL)
+    connection = mysql.createConnection(process.env.JAWSDB_URL)
 } else {
     const connection = mysql.createConnection({
         host: "localhost",
