@@ -4,7 +4,6 @@ var connection;
 // create connection with burger_db database
 if (process.env.JAWSDB_URL) {
     connection = mysql.createConnection(process.env.JAWSDB_URL)
-    console.log("using cloude connection")
 } else {
     connection = mysql.createConnection({
         host: "localhost",
