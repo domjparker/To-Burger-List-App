@@ -29,7 +29,7 @@ This application was really to experiment with writing a custom ORM, while also 
 
 ## Installation
 
-You can see a deployment of the application on [Heroku](http://google.com), but if you'd like to install it and see it operating from your local computer, clone the repo here in Github, and be sure to have or make an account with MySQL. From the command line, run 'npm start'.
+You can see a deployment of the application on [Heroku](https://djp-to-burger-app.herokuapp.com/), but if you'd like to install it and see it operating from your local computer, clone the repo here in Github, and be sure to have or make an account with MySQL. From the command line, run 'npm start'.
 
 
 
