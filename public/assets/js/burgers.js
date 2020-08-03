@@ -6,22 +6,24 @@ $(function () {
         let newBurger = {
             burger_name: $("#newBurgerName").val().trim(),
         };
-        // send POST request
-        $.ajax("/api/burgers", {
-            type: "POST",
-            data: newBurger
-        }).then(
-            function () {
-                console.log("created new burger");
-                // reload page to get updated burger list
-                location.reload();
-            }
-        )
+        if (newBurger) {
+            // send POST request
+            $.ajax("/api/burgers", {
+                type: "POST",
+                data: newBurger
+            }).then(
+                function () {
+                    console.log("created new burger");
+                    // reload page to get updated burger list
+                    location.reload();
+                }
+            )
+        }
     });
-    
+
     $(".devourBurger").on("click", function (event) {
         let id = $(this).data("id");
-        const burgerEaten =  {
+        const burgerEaten = {
             devoured: 1
         };
 
@@ -30,7 +32,7 @@ $(function () {
             type: "PUT",
             data: burgerEaten
         }).then(
-            function() {
+            function () {
                 console.log("burger changed to devoured");
                 // reload page to get updated burger list
                 location.reload();

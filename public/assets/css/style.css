@@ -35,8 +35,11 @@ main {
   opacity: 0.8;
 }
 
+#newBurgerName {
+  color: white !important;
+}
+
 .page-footer {
   display: flex;
   justify-content: center;
-  align-items: center;
 }
